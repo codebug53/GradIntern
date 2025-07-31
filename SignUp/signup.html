@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GradIntern signup
+  </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="signup.css" />
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <div class="min-h-screen flex flex-col md:flex-row">
+    <div class="image-container" style="flex: 1; justify-content: left;">
+      <div
+        style="position: absolute; top: 4rem; left: 3rem; color: #1f2937; z-index: 10; max-width: 80%;"
+      >
+        <p style="font-size: 1.2rem; position: relative;">
+          "The only way to 
+          <span style="color: rgb(2, 2, 194)">do great work</span> is to
+          <span style="color: rgb(2, 2, 194)">love what you do.</span>"
+        </p>
+        <p
+          style="
+            position: absolute;
+            text-align: left;
+            font-weight: bold;
+            margin-top: 2rem;
+            margin-left: 24rem;
+            font-style: italic;
+          "
+        >
+          - Steve jobs
+        </p>
+      </div>
+    </div>
+    <div class="form-container flex items-center justify-center p-6 sm:p-12">
+      <div class="w-full max-w-md">
+        <h1 class="text-3xl font-bold mb-8 text-left">Sign-up</h1>
+
+        <form action="#" method="POST">
+          <div class="relative mb-4">
+            <i
+              class="fa-regular fa-envelope absolute top-1/2 left-4 -translate-y-1/2 text-gray-400"
+            ></i>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <div class="relative mb-6">
+            <i
+              class="fas fa-lock absolute top-1/2 left-4 -translate-y-1/2 text-gray-400"
+            ></i>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <div class="relative mb-6">
+            <i
+              class="fas fa-lock absolute top-1/2 left-4 -translate-y-1/2 text-gray-400"
+            ></i>
+            <input
+              type="Confirm password"
+              id="Confirm password"
+              name="Confirm password"
+              class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Confirm password"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-blue-600 text-white font-semibold py-3 rounded-lg hover:bg-blue-700 transition duration-300 mb-4"
+          >
+            signup
+          </button>
+
+          
+        </form>
+        <div class="flex items-center my-8">
+          <hr class="w-full border-gray-300" />
+          <span class="px-4 text-gray-500">or</span>
+          <hr class="w-full border-gray-300" />
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <button
+            class="w-full flex items-center justify-center py-3 border border-gray-300 rounded-lg hover:bg-gray-100 transition duration-300"
+          >
+            <img
+              src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+              alt="Google logo"
+              class="h-5 mr-2"
+            />
+          </button>
+          <button
+            class="w-full flex items-center justify-center py-3 border border-gray-300 rounded-lg hover:bg-gray-100 transition duration-300"
+          >
+            <i class="fab fa-facebook-f text-blue-700 text-xl mr-2"></i>
+          </button>
+        </div>
+        <p class="mt-8 text-center text-gray-600">
+          Done with account creation?
+          <a
+            href="../LoginPage/login.html"
+            class="text-blue-600 font-semibold hover:underline"
+            >Log in</a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
