@@ -1,24 +1,26 @@
-The folder strucutre that we plan to follow.
+## 📁 Project Folder Structure
+
+```bash
 GradIntern/
 │
-├── client/                      # Frontend (your current files)
-│   ├── components/
-│   ├── DashBoard/
-│   ├── LoginPage/
-│   ├── SignUp/
-│   ├── HomePage/
-│   ├── script.js
-│   ├── style.css
-│   └── index.html
+├── client/                      # Frontend (HTML/CSS/JS)
+│   ├── components/              # Reusable components
+│   ├── DashBoard/               # Dashboard UI
+│   ├── LoginPage/               # Login form and logic
+│   ├── SignUp/                  # Sign-up form and logic
+│   ├── HomePage/                # Landing/Home page
+│   ├── script.js                # Frontend interactivity
+│   ├── style.css                # Global styles
+│   └── index.html               # Entry HTML file
 │
-├── server/                      # Backend API
-│   ├── models/                  # DB Models (Job, User)
-│   ├── routes/                  # API Routes
-│   ├── controllers/            # Route handlers
-│   ├── middleware/             # Auth middleware
-│   ├── config/                 # DB config
-│   ├── server.js               # Entry point (Express)
-│   └── .env                    # Environment vars
+├── server/                      # Backend (Node.js + Express)
+│   ├── models/                  # Mongoose schemas (User, Job)
+│   ├── routes/                  # API route definitions
+│   ├── controllers/             # Request handlers
+│   ├── middleware/              # Auth and other middlewares
+│   ├── config/                  # MongoDB connection config
+│   ├── server.js                # Main server entry point
+│   └── .env                     # Environment variables
 │
-├── package.json
-└── README.md
+├── package.json                 # NPM dependencies and metadata
+└── README.md                    # Project documentation
