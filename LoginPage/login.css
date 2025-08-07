@@ -1,10 +1,8 @@
-/* Custom styles to match the design */
+/* Base Light Theme */
 body {
   font-family: 'Inter', sans-serif;
-}
-
-.form-container {
-  flex-basis: 50%;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 .image-container {
@@ -17,11 +15,69 @@ body {
 }
 
 .form-container {
+  flex-basis: 50%;
   min-height: 100vh;
 }
 
-.relative1{
-  background-color: none;
-  margin : 200px 100px;
-  margin-bottom:500px;
+.relative1 {
+  background-color: transparent;
+  margin: 200px 100px;
+  margin-bottom: 500px;
+}
+
+/* Toggle Switch Styling */
+/* === Theme Colors === */
+body.light-mode {
+  background-color: #ffffff;
+  color:  #363636;
+}
+
+body.dark-mode {
+  background: #363636; /* Or your gradient-bg */
+  color: #ffffff;
+}
+
+/* === Toggle Switch === */
+.theme-switch {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider-switch {
+  width: 50px;
+  height: 25px;
+  background-color: #ccc;
+  border-radius: 50px;
+  position: relative;
+  transition: 0.4s;
+}
+
+.slider-switch::before {
+  content: "";
+  position: absolute;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background-color: white;
+  top: 2px;
+  left: 2px;
+  transition: 0.4s;
+}
+
+/* Switch on */
+.theme-switch input:checked + .slider-switch {
+  background-color: #000000;
+}
+
+.theme-switch input:checked + .slider-switch::before {
+  transform: translateX(25px);
 }

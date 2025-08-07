@@ -19,7 +19,11 @@
     
 </head>
 <body class="bg-gray-50 text-gray-800">
-
+    <label class="theme-switch">
+        <input type="checkbox" id="themeToggle" />
+        <span class="slider-switch"></span>
+      </label>
+      
     <div class="min-h-screen flex flex-col md:flex-row">
         
         <!-- Left Side: Login Form -->
@@ -103,5 +107,14 @@
         
     </div>
 
+
+<script>
+    const toggle = document.getElementById('themeToggle');
+    const body = document.body;
+  
+    toggle.addEventListener('change', () => {
+      body.classList.toggle('dark-mode');
+    });
+  </script>
 </body>
 </html>
