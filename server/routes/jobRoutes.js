@@ -1,10 +1,14 @@
 import express from "express";
-import { postJob, getRecruiterJobs } from "../controllers/jobController.js";
-import { verifyToken } from "../middlewares/verifyToken.js";
+import { getJobById, getJobs } from "../controllers/jobController.js";
 
 const router = express.Router();
 
-router.post("/", verifyToken, postJob);
-router.get("/", verifyToken, getRecruiterJobs);
+// Route to get all jobs
+
+router.get("/", getJobs);
+
+// Route to get jobs by id
+
+router.get("/:id", getJobById);
 
 export default router;

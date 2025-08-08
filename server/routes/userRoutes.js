@@ -1,24 +1,16 @@
-import express from "express";
-import multer from "multer";
-import { storage } from "../utils/cloudinary.js";
-import { verifyToken } from "../middlewares/verifyToken.js";
-import { uploadResume, getUserProfile } from "../controllers/userController.js";
-import { registerUser, loginUser } from '../controllers/userController.js';
 
-const upload = multer({ storage });
+import express from "express"
+import { applyForJob, getUserData, getUserJobApplications, updateUserResume } from "../controllers/userController.js";
+import upload from "../config/multer.js";
 
 const router = express.Router();
 
-// Fetch user profile
-router.get("/profile", verifyToken, getUserProfile);
+router.get("/user", getUserData);
 
-// Upload resume file to Cloudinary
-router.put("/resume", verifyToken, upload.single("resume"), uploadResume);
+router.post("/apply", applyForJob);
 
+router.get("/applications", getUserJobApplications);
 
-// Public routes
-router.post('/register', registerUser);
-router.post('/login',    loginUser);
+router.post("/update-resume", upload.single('resume'), updateUserResume);
 
 export default router;
-

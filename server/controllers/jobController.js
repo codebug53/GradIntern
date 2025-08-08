@@ -1,20 +1,44 @@
-import Job from "../models/jobModel.js";
 
-export const postJob = async (req, res) => {
+import Job from "../models/Job.js";
+
+// Get all Jobs
+
+export const getJobs = async (req, res) => {
   try {
-    const job = new Job({ ...req.body, recruiterId: req.user.id });
-    await job.save();
-    res.status(201).json(job);
-  } catch (err) {
-    res.status(500).json({ error: "Failed to post job" });
+    const jobs = await Job.find({ visible: true }).populate({
+      path: "companyId",
+      select: "-password",
+    });
+
+    res.json({ success: true, jobs });
+  } catch (error) {
+    res.json({ success: false, message: error.message });
   }
 };
 
-export const getRecruiterJobs = async (req, res) => {
+// Get job by single id
+
+export const getJobById = async (req, res) => {
   try {
-    const jobs = await Job.find({ recruiterId: req.user.id });
-    res.json(jobs);
-  } catch (err) {
-    res.status(500).json({ error: "Failed to fetch jobs" });
+    const { id } = req.params;
+
+    const job = await Job.findById(id).populate({
+      path: "companyId",
+      select: "-password",
+    });
+
+    if (!job) {
+      res.json({
+        success: false,
+        message: "Job not found",
+      });
+    }
+
+    res.json({
+      success: true,
+      job,
+    });
+  } catch (error) {
+    res.json({ success: false, message: error.message });
   }
 };
